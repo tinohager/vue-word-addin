@@ -1,0 +1,40 @@
+{
+  "name": "vue-word-plugin",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.36.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@types/office-js": "^1.0.377",
+    "@types/office-runtime": "^1.0.35",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-typescript": "~5.0.8",
+    "@vue/cli-service": "^5.0.8",
+    "@vue/eslint-config-standard": "^8.0.1",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-vue": "^9.23.0",
+    "office-addin-cli": "^1.5.9",
+    "office-addin-debugging": "^4.3.9",
+    "office-addin-lint": "^2.2.9",
+    "office-addin-manifest": "^1.12.10",
+    "office-addin-mock": "^2.3.17",
+    "office-addin-prettier-config": "^1.2.0",
+    "office-addin-test-helpers": "^1.4.9",
+    "office-addin-test-server": "^1.4.14",
+    "typescript": "~5.4.2"
+  }
+}

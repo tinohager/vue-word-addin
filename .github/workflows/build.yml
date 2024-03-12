@@ -1,0 +1,52 @@
+name: Build, Test & Publish
+
+permissions:
+  contents: write
+
+on:
+  push:
+    paths:
+    - 'src/**'
+    - '.github/workflows/**'
+    branches: [ main ]
+  pull_request:
+    paths:
+    - 'src/**'
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./src/vue-word-plugin
+
+    strategy:
+      matrix:
+        node-version: ['20.x']
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Clean slate
+      working-directory: ${{env.working-directory}}
+      run: npm ci
+    - name: Build
+      working-directory: ${{env.working-directory}}
+      run: npm run build
+    #- name: Upload artifact
+    #  uses: actions/upload-artifact@v4
+    #  with:
+    #    # Artifact name
+    #    name: package
+    #    # Directory containing files to upload
+    #    path: ${{env.working-directory}}/dist/
+    #    # Days before delete
+    #    retention-days: 1
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: src/vue-word-plugin/dist/ # The folder the action should deploy.
