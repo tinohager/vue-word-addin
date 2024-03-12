@@ -4,6 +4,8 @@ const homedir = require('os').homedir()
 
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
+  baseUrl:
+    process.env.NODE_ENV === 'development' ? '/' : '/vue-word-addin/',
   transpileDependencies: true,
   devServer:
     process.env.NODE_ENV === 'development'
